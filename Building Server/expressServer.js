@@ -14,6 +14,8 @@ app.get('/', (req, res) => {
     res.send('Hello World !');
 });
 
+// Fetch Request Query Parameters With req.query
+// Usage: http://localhost:3000/books?sortBy=date
 app.get('/books', (req, res) => {
     console.log('query :', req.query);
     res.send(books);
