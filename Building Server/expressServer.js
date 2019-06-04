@@ -19,6 +19,14 @@ app.get('/books', (req, res) => {
     res.send(books);
 });
 
+// Fetch Request Parameters With req.params
+// Usage: http://localhost:3000/books/2
+app.get('/books/:id', (req, res) => {
+    console.log('id :', req.params);
+    const book = books.find( b => b.id === parseInt(req.params.id));
+    res.send(book);
+});
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
