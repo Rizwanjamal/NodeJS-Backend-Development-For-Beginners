@@ -1,0 +1,15 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "Testing Project",
+  "main": "expressServer.js",
+  "scripts": {
+    "start": "node expressServer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rizwan Jamal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.0"
+  }
+}
