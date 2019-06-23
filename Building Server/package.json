@@ -5,11 +5,13 @@
   "main": "expressServer.js",
   "scripts": {
     "start": "node expressServer.js",
+    "dev": "nodemon expressServer.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rizwan Jamal",
   "license": "ISC",
   "dependencies": {
+    "@hapi/joi": "^15.0.3",
     "express": "^4.17.0"
   }
 }
