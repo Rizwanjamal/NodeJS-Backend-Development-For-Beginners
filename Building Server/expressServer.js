@@ -7,7 +7,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
 
-//Custom Middlewares
+// Template Engines
+app.set('view engine', 'pug');
+app.set('views', './template-views'); //default value './views'
+
+// Custom Middlewares
 
 app.use(logger);
 
@@ -26,7 +30,7 @@ let books = [{
 
 app.get('/', (req, res) => {
     // res.send('Hello World !');
-    res.render('main');
+    res.render('mainfile', {title: 'Rizwan Jamal', heading: 'Rizwan'})
 });
 
 // Fetch Request Query Parameters With req.query
