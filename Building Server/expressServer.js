@@ -8,6 +8,8 @@ const userRoutes = require('./routes/User');
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
+const config = require('./config.json');
+const jwt = require('express-jwt');
 
 // Template Engines
 app.set('view engine', 'pug');
@@ -16,8 +18,8 @@ app.set('views', './template-views'); //default value './views'
 // Custom Middlewares
 app.use(logger);
 
-router.use('/authors', authorRoutes);
-router.use('/books', bookRoutes);
+router.use('/authors', jwt({secret: config.secret}), authorRoutes);
+router.use('/books', jwt({secret: config.secret}), bookRoutes);
 router.use('/users', userRoutes);
 app.use(router);
 
@@ -30,6 +32,9 @@ app.use((req, res) => {
 })
 
 app.use((err, req, res, next) => {
+    if (err.name == 'UnauthorizedError') {
+        return res.status(401).send('Invalid Token')
+    }
     res.status(400).send(err)
 })
 

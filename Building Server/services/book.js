@@ -5,6 +5,7 @@ const Book = db.Book;
 // Fetch Request Query Parameters With req.query
 // Usage: http://localhost:3000/books?sortBy=date
 const getBooks = async (req, res, next) => {
+    console.log('user :', req.user);
     Book.find()
     .populate('author')
     .then((books) => {

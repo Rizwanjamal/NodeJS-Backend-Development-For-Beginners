@@ -4,8 +4,8 @@ mongoose.connect(process.env.MONGODB_URI || config.connectionString, { useCreate
     .then(() => {
         console.log('Connected')
     })
-    .catch(() => {
-        console.log('Not Connected')
+    .catch((err) => {
+        console.log('Not Connected =>', err)
     })
 mongoose.Promise = global.Promise;
 

@@ -1,4 +1,4 @@
 {
-    "connectionString": "mongodb://localhost:27017/book-db",
+    "connectionString": "mongodb://bookdb:bookdb123@ds153699.mlab.com:53699/book-db",
     "secret": "bookmanagementsystem"
 }

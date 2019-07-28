@@ -5,7 +5,7 @@ const Author = db.Author;
 // Fetch Request Query Parameters With req.query
 // Usage: http://localhost:3000/books?sortBy=date
 const getAuthors = async (req, res) => {
-    const authors = Author.find();
+    const authors = await Author.find();
     res.json(authors);
 };
 
