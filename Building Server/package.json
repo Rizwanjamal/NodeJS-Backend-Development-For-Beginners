@@ -12,8 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/joi": "^15.0.3",
+    "bcrypt": "^3.0.6",
+    "bcryptjs": "^2.4.3",
     "ejs": "^2.6.2",
     "express": "^4.17.0",
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.6.5",
     "pug": "^2.0.4"
   }

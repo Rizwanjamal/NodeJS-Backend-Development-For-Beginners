@@ -4,6 +4,7 @@ const app = express();
 var router = express.Router();
 const authorRoutes = require('./routes/author');
 const bookRoutes = require('./routes/book');
+const userRoutes = require('./routes/User');
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
@@ -17,6 +18,7 @@ app.use(logger);
 
 router.use('/authors', authorRoutes);
 router.use('/books', bookRoutes);
+router.use('/users', userRoutes);
 app.use(router);
 
 // app.get('/', (req, res) => {

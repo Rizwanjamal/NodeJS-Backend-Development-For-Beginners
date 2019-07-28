@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var authorService = require('../services/author');
 
-
 /* GET ALL AUTHORS */
 router.get('/', authorService.getAuthors);
 
